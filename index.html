@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Tab Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="margin: 0; padding: 0; width: 100%;">
+    <div class="Banner">
+        <img style="mix-blend-mode: multiply;" src="https://i.pinimg.com/736x/00/d5/70/00d570c0a0e7cb671aafeb442feb839b.jpg">
+        <a href="index.html" class="BannerLink">
+            <button style="height: 50px; margin: auto;" class="TextButton">Convert Tabs</button>
+        </a>
+        <a href="" class="BannerLink">
+            <button style="height: 50px; margin: auto;" class="TextButton">This Does Nothing</button>
+        </a>
+        <a href="AboutUs.html" class="BannerLink">
+            <button style="height: 50px; margin: auto;" class="TextButton">About Us</button>
+        </a>
+    </div>
+    <div class="ObjectContainer">
+        <div class="inputsdivcollection" id="userAreaDiv">
+            <div class="ytlinkcontainer">
+                <h1 class="inputLabelMedium">Youtube Link:</h1>
+                <input style="width: 70%; margin: 20px auto 0;" class="linkinput" type="text" name="ytlink" id="linkput" placeholder="Youtube Link">
+                <div class="timeinputdivs">
+                    <div>
+                        <h3 class="inputLabelSmall">Start Time (s)</h3>
+                        <input style="width: 80%; margin: 10px auto 0;" class="linkinput" type="number" name="timeput" id="starttime" placeholder="Start Time">
+                    </div>
+                    <div>
+                        <h3 class="inputLabelSmall">Length (s)</h3>
+                        <input style="width: 80%; margin: 10px auto 0;" class="linkinput" type="number" name="timeput" value="10" placeholder="length" id="dtimed" readonly>
+                        <input style="height: 10px;" class="TimeSlider" type="range" min="1" max="30" step="1" value="10" id="dtime" oninput="updateDT(this.value)">
+                    </div>
+                </div>
+                <button style="margin-top: 30px;" class="convertButton" id="convertlink" onclick="getTabsFromLink()">Convert</button>
+            </div>
+        </div>
+        <div id="output" class="tabDiv"></div>
+        <div style="background-color: white; width: 100%; height: 1000px;"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

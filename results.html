@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Tabs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="margin: 0; padding: 0; width: 100%;">
+    <style>
+        .tabs-container{
+            margin: 20px;
+            padding: 10px;
+            border: solid;
+            border-radius: 10px;
+            width: fit-content;
+            border-width: 4px;
+        }
+        .resultContentDiv{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+    <div class="Banner">
+        <img style="mix-blend-mode: multiply;" src="https://i.pinimg.com/736x/00/d5/70/00d570c0a0e7cb671aafeb442feb839b.jpg">
+        <a href="index.html" class="BannerLink">
+            <button style="height: 50px; margin: auto;" class="TextButton">Convert Tabs</button>
+        </a>
+        <a href="" class="BannerLink">
+            <button style="height: 50px; margin: auto;" class="TextButton">This Does Nothing</button>
+        </a>
+        <a href="AboutUs.html" class="BannerLink">
+            <button style="height: 50px; margin: auto;" class="TextButton">About Us</button>
+        </a>
+    </div>
+    <div class="resultContentDiv" style="margin-bottom: 20px;">
+        <h1 class="LargeLabel" style="align-self: center; margin-top: 80px;">Your Generated Guitar Tabs:</h1>
+        <div class="tabs-container">
+            <div id="tabs-output" class="tabDiv"></div>
+        </div>
+    </div>
+
+    <script>
+        // Fetch the tabs from localStorage and display them
+        const tabs = JSON.parse(localStorage.getItem('guitarTabs'));
+        const outputElement = document.getElementById('tabs-output');
+
+        if (tabs && Array.isArray(tabs)) {
+            tabs.forEach(line => {
+                const lineElement = document.createElement('div');
+                lineElement.textContent = line;
+                outputElement.appendChild(lineElement);
+            });
+        } else {
+            outputElement.textContent = 'No tabs found.';
+        }
+    </script>
+</body>
+</html>
