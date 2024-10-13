@@ -104,7 +104,7 @@ async function getTabsFromLink() {
         formData.append('dt', dt);
 
         try {
-            const response = await fetch('https://9821-37-46-167-35.ngrok-free.app/convertLink', {
+            const response = await fetch('https://37.46.167.35:8000/convertLink/', {
                 method: 'POST',
                 body: formData
             });
